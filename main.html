@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width,initial-scale=1.0">
+        <title> COUNTER </title>
+        <link rel="stylesheet"href="style.css">
+        <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4CAF50">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1 class="head">COUNTER</h1>
+            <p class="pr">Count Your zikr</p>
+            <p class="count-display" id="display">
+               0
+            </p>
+            <div class="btn">
+                <button class="rst"
+                    onclick="reset()"> 
+                    RESET </button>
+
+                <button class="add-count"
+                    onclick="add()">+
+                </button>
+            </div>
+            <div class="history">
+                YOUR HISTORY
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service worker.js')
+            .then(() => console.log('Service Worker Registered'))
+            .catch(err => console.log('Service Worker Failed:', err));
+    }
+</script>
+    </body>
+</html>
